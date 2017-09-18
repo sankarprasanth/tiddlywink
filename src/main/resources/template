@@ -1,0 +1,352 @@
+9200/_template/all
+
+{
+  "template":   "shoproads", 
+  "settings": { "number_of_shards": 5}, 
+  "mappings": {
+    "_default_": {
+      "_all": { 
+        "enabled": true
+      },
+      "dynamic_templates": [
+        {
+          "strings": { 
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "string",
+              "analyzer": "not_analyzed"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+PUT : 9200/_template/*
+
+{
+    "order": 0,
+    "template": "*",
+    "settings": {
+        "index.number_of_shards": "1"
+    },
+    "mappings": {
+        "_default_": {
+            "dynamic_templates": [
+                {
+                    "string": {
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "match_mapping_type": "string"
+                    }
+                },
+                {
+                    "long": {
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "match_mapping_type": "long"
+                    }
+                },
+                {
+                    "integer": {
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "match_mapping_type": "integer"
+                    }
+                },
+                {
+                    "double": {
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "match_mapping_type": "double"
+                    }
+                },
+                {
+                    "float": {
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "match_mapping_type": "float"
+                    }
+                },
+                {
+                    "date": {
+                        "mapping": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "match_mapping_type": "date"
+                    }
+                }
+            ]
+        }
+    },
+    "aliases": {}
+}
+
+
+
+{
+          "date": 0,
+          "selling_price": 399,
+          "emi": false,
+          "productId": "ACCERYMKMDC6FJAT",
+          "image_url_medium": "http://img.fkcdn.com/image/battery-charger/j/a/t/nirosha-wxc412-800x800-imaerxacfpzgh5tw.jpeg",
+          "_updatedDate": 1490208717156,
+          "shopAICategoryId": "574d7ba3f1573368700fbc7d",
+          "discount_price": -1,
+          "mrp_currency": "INR",
+          "description": "null",
+          "mrp": 1099,
+          "shopAICategory": "ShopAI_India->Mobiles_&_Tablets->Mobile_Accessories->Chargers,_Adaptors_and_Cables",
+          "availability": true,
+          "model_id": "WXC412",
+          "title": "Nirosha WXC412 Mobile Charger(White)",
+          "seoTitle": "Nirosha-WXC412-Mobile-Charger-White--ACCERYMKMDC6FJAT",
+          "url": "http://dl.flipkart.com/dl/nirosha-wxc412-mobile-charger/p/itmerymknzn8gg9n?pid=ACCERYMKMDC6FJAT&affid=nareshinf",
+          "cash_on_delivery": true,
+          "providerId": "flipkart",
+          "product-details": {
+            "shipping_info": "Usually Delivered in 8 - 9 days.",
+            "product_no_of_ratings": -1,
+            "available_sizes": "null",
+            "provider_review_link": "null",
+            "image_urls": [
+              "https://rukminim1.flixcart.com/image/832/832/battery-charger/j/a/t/nirosha-wxc412-original-imaerxacfpzgh5tw.jpeg?q=70"
+            ],
+            "title": "Nirosha WXC412 Mobile Charger  (White)",
+            "specifications": {
+              "Number Of Charger Pins": "1",
+              "Sales Package": "1 Wall Charger with cable",
+              "Model Name": "Fast Charger",
+              "Output Current": "2A",
+              "Domestic Warranty": "3 Month",
+              "Cable Length": "1 m",
+              "Designed For": "HTC One M10",
+              "Model Number": "WXC412",
+              "Output Interface": "Micro USB",
+              "Power Output": "2AMP"
+            },
+            "product_no_of_reviews": -1,
+            "features": [
+              "Wall Charger",
+              "Suitable For: Mobile",
+              "With USB Cable",
+              "Universal Voltage"
+            ],
+            "shipping_charge": 70,
+            "reviews": [],
+            "return_policy": "null",
+            "product_rating": -1
+          },
+          "category": "Mobiles>Mobile Accessories>Chargers>Wall Chargers",
+          "productUrl": "http://dl.flipkart.com/dl/nirosha-wxc412-mobile-charger/p/itmerymknzn8gg9n?pid=ACCERYMKMDC6FJAT&affid=nareshinf",
+          "brand": "null",
+          "test_field_mapping":"test data"
+        }
+
+
+
+
+POST : 9200/new_index
+
+{
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "_normalized": {
+          "type": "boolean"
+        },
+        "_updatedDate": {
+          "type": "long"
+        },
+        "availability": {
+          "type": "boolean"
+        },
+        "brand": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "cash_on_delivery": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "category": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "date": {
+          "type": "long"
+        },
+        "description": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "discount_price": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "emi": {
+          "type": "boolean"
+        },
+        "features": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "image_url_medium": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "image_urls": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "model_id": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "mrp": {
+          "type": "float"
+        },
+        "mrp_currency": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "product-details": {
+          "properties": {
+            "available_sizes": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "features": {
+              "type": "string"
+            },
+            "image_urls": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "product_no_of_ratings": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "product_no_of_reviews": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "product_rating": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "provider_review_link": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "return_policy": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "reviews": {
+              "properties": {
+                "review_date": {
+                  "type": "string",
+                  "index": "not_analyzed"
+                },
+                "review_heading": {
+                  "type": "string",
+                  "index": "not_analyzed"
+                },
+                "review_rating": {
+                  "type": "string",
+                  "index": "not_analyzed"
+                },
+                "review_text": {
+                  "type": "string",
+                  "index": "not_analyzed"
+                },
+                "reviewer_name": {
+                  "type": "string",
+                  "index": "not_analyzed"
+                }
+              }
+            },
+            "shipping_charge": {
+              "type": "string",
+              "index": "not_analyzed"
+            },
+            "shipping_info": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "productId": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "productUrl": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "product_id": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "product_no_of_reviews": {
+          "type": "long"
+        },
+        "product_url": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "providerId": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "provider_id": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "return_policy": {
+          "type": "string"
+        },
+        "selling_price": {
+          "type": "float"
+        },
+        "seoTitle": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "shipping__info": {
+          "type": "string"
+        },
+        "shopAICategory": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "shopAICategoryId": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "index": "not_analyzed"
+        }
+      }
+    }
+  }
+}

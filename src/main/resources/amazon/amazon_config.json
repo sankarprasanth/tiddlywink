@@ -1,0 +1,112 @@
+{
+ "in":{
+  "endpoint":"http://webservices.amazon.in/onca/xml",
+  "browsenodes":[
+    {"index":"Baby",
+     "node":"1571275031"
+    },
+    {
+     "index":"Beauty",
+     "node" :"1355017031"
+    },
+    {
+     "index":"Books",
+     "node" :"976390031"
+    },
+    {
+     "index":"Automotive",
+     "node" :"4772061031"
+    },
+     {
+     "index":"Apparel",
+     "node" :"1571272031"
+    },
+    {
+     "index":"PCHardware",
+     "node" :"976393031"
+    },
+    {
+     "index":"Electronics",
+     "node" :"976420031"
+    },
+    {
+     "index":"GiftCards",
+     "node" :"3704983031"
+    },
+    {
+     "index":"Grocery",
+     "node" :"2454179031"
+    },
+    {
+     "index":"HealthPersonalCare",
+     "node" :"1350385031"
+    },
+    {
+     "index":"HomeGarden",
+     "node" :"976443031"
+    },
+     {
+     "index":"Industrial",
+     "node" :"5866079031"
+    },
+    {
+     "index":"Jewelry",
+     "node" :"1951049031"
+    },
+     {
+     "index":"KindleStore",
+     "node" :"1571278031"
+    },
+    {
+     "index":"Luggage",
+     "node" :"2454170031"
+    },
+    {
+     "index":"DVD",
+     "node" :"976417031"
+    },
+     {
+     "index":"Music",
+     "node" :"976446031"
+    },
+    {
+     "index":"MusicalInstruments",
+     "node" :"3677698031"
+    },
+    {
+     "index":"OfficeProducts",
+     "node" :"2454173031"
+    },
+    {
+     "index":"PetSupplies",
+     "node" :"4740420031"
+    },
+     {
+     "index":"Shoes",
+     "node" :"1571284031"
+    },
+    {
+     "index":"Software",
+     "node" :"976452031"
+    },
+    {
+     "index":"SportingGoods",
+     "node" :"1984444031"
+    },
+    {
+     "index":"Toys",
+     "node" :"1350381031"
+    },
+     {
+     "index":"VideoGames",
+     "node" :"976461031"
+    },
+    {
+     "index":"Watches",
+     "node" :"1350388031"
+    }
+  ]
+ }
+}
+
+
